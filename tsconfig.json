@@ -20,13 +20,19 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/utils/axiosInstance.ts"
+    "src/utils/axiosInstance.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

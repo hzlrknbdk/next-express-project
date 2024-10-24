@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Search from "./Search";
+import { useTranslations } from 'next-intl';
 
 interface Friend {
     id: number;
@@ -16,12 +17,12 @@ const initialFriends: Friend[] = [
 
 export default function RightSidebar() {
     const [friends, setFriends] = useState<Friend[]>(initialFriends);
-
+    const t = useTranslations('friendsSidebar');
 
     return (
         <aside className="w-64 rounded-sm bg-white text-gray-500 p-4 mt-2">
             <Search />
-            <div className="mt-5 font-semibold">FRIENDS </div>
+            <div className="mt-5 font-semibold">{t('friends')} </div>
             <ul className="mt-3 space-y-3">
                 {friends.length > 0 ? (
                     friends.map((friend) => (
@@ -37,10 +38,10 @@ export default function RightSidebar() {
                                     {friend.lastActive === null ? (
                                         <span className="flex items-center space-x-1 text-green-500">
                                             <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                                            <span>Active now</span>
+                                            <span>{t('active')}</span>
                                         </span>
                                     ) : (
-                                        `${friend.lastActive} minutes ago`
+                                        `${friend.lastActive} ${t('minute')}`
                                     )}
                                 </div>
                             </div>

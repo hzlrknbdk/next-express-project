@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 const stories = [
     { id: 1, image: '/assets/images/pexels-1.jpg', alt: 'Story 2' },
     { id: 2, image: '/assets/images/pexels-1.jpg', alt: 'Story 2' },
@@ -7,10 +9,12 @@ const stories = [
 
 ];
 
-const StoryArea = () => {
+const Story = () => {
+    const t = useTranslations('stories');
+
     return (
         <>
-            <h1 className="text-xl font-bold text-gray-500">Stories</h1>
+            <h1 className="text-xl font-bold text-gray-500">{t('title')}</h1>
             <div className="flex space-x-4 overflow-x-auto pt-4">
                 {stories.map((story) => (
                     <div key={story.id} className="relative w-40 h-auto rounded-lg overflow-hidden">
@@ -25,4 +29,4 @@ const StoryArea = () => {
     );
 };
 
-export default StoryArea;
+export default Story;

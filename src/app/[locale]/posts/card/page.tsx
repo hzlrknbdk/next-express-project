@@ -19,7 +19,6 @@ const PostCard = ({ post }: { post: Post }) => {
                 alt="Post"
                 className="w-full h-52 object-cover"
             />
-
             <div className="p-4">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-3">
@@ -42,7 +41,6 @@ const PostCard = ({ post }: { post: Post }) => {
                         </div>
                     </div>
                 </div>
-
                 <div className="mt-3 text-gray-700">
                     {post.desc}
                 </div>

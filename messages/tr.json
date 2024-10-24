@@ -1,0 +1,64 @@
+{
+  "auth": {
+    "loginTitle": "Giriş Yap",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "E-posta",
+    "passwordLabel": "Şifre",
+    "passwordPlaceholder": "Şifre",
+    "forgotPassword": "Şifrenizi mi unuttunuz?",
+    "loginButton": "Giriş Yap",
+    "loading": "Yükleniyor...",
+    "signupPrompt": "Hesabınız yok mu?",
+    "signupLink": "Kayıt Ol"
+  },
+  "profile": {
+    "showModal": "Modalı Aç",
+    "modalTitle": "Modal Başlığı",
+    "modalContent": "Bu, tekrar kullanılabilir bir modal bileşenidir.",
+    "firstNameLabel": "İsim:",
+    "firstNamePlaceholder": "İsminizi girin",
+    "lastNameLabel": "Soyisim:",
+    "lastNamePlaceholder": "Soyisminizi girin",
+    "emailLabel": "E-posta:",
+    "emailPlaceholder": "E-postanızı girin",
+    "phoneNumberLabel": "Telefon numarası:",
+    "phoneNumberPlaceholder": "Telefon numaranızı girin",
+    "birthDateLabel": "Doğum Tarihi:",
+    "birthDatePlaceholder": "Doğum tarihinizi seçin",
+    "genderLabel": "Cinsiyet",
+    "male": "Erkek",
+    "female": "Kadın",
+    "other": "Diğer",
+    "bioLabel": "Biyografi:",
+    "bioPlaceholder": "Kendiniz hakkında biraz bilgi verin",
+    "profilePictureLabel": "Profil Resmi:",
+    "submitProfile": "Gönder"
+  },
+  "sidebar": {
+    "feed": "Akış",
+    "friends": "Arkadaşlar",
+    "events": "Etkinlikler",
+    "videos": "Videoları İzle",
+    "photos": "Fotoğraflar",
+    "files": "Dosyalar"
+  },
+  "header": {
+    "profile": "Profil",
+    "settings": "Ayarlar",
+    "feeds": "Akış"
+  },
+  "search": {
+    "search": "Ara"
+  },
+  "friendsSidebar": {
+    "friends": "Arkadaşlar",
+    "active": "Şu an aktif",
+    "minute": "dakika önce"
+  },
+  "postList": {
+    "recentPosts": "Son Gönderiler"
+  },
+  "stories": {
+    "title": "Hikayeler"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "auth": {
+    "loginTitle": "Login",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot your password?",
+    "loginButton": "Login",
+    "loading": "Loading...",
+    "signupPrompt": "Don't have an account?",
+    "signupLink": "Sign Up"
+  },
+  "profile": {
+    "showModal": "Show Modal",
+    "modalTitle": "Modal Title",
+    "modalContent": "This is a reusable modal component.",
+    "firstNameLabel": "First Name:",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNameLabel": "Last Name:",
+    "lastNamePlaceholder": "Enter your last name",
+    "emailLabel": "E-mail:",
+    "emailPlaceholder": "Enter your email",
+    "phoneNumberLabel": "Phone number:",
+    "phoneNumberPlaceholder": "Enter your phone number",
+    "birthDateLabel": "Birth Date:",
+    "birthDatePlaceholder": "Select your birth date",
+    "genderLabel": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "bioLabel": "Bio:",
+    "bioPlaceholder": "Tell us a bit about yourself",
+    "profilePictureLabel": "Profile Picture:",
+    "submitProfile": "Submit"
+  },
+  "sidebar": {
+    "feed": "Feed",
+    "friends": "Friends",
+    "events": "Events",
+    "videos": "Watch Videos",
+    "photos": "Photos",
+    "files": "Files"
+  },
+  "header": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "feeds": "Feeds"
+  },
+  "search": {
+    "search": "Search"
+  },
+  "friendsSidebar": {
+    "friends": "Friends",
+    "active": "Active now",
+    "minute": "minute ago"
+  },
+  "postList": {
+    "recentPosts": "Recent Posts"
+  },
+  "stories": {
+    "title": "Stories"
+  }
+}

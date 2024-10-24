@@ -1,4 +1,5 @@
-import PostCard from './postCard'
+import PostCard from '../card/page'
+import { useTranslations } from 'next-intl';
 
 interface Post {
     id: number;
@@ -32,9 +33,11 @@ const posts: Post[] = [
 ];
 
 export default function PostList() {
+    const t = useTranslations('postList');
+
     return (
         <>
-            <h1 className="text-xl font-bold text-gray-500 py-5">Recent Posts</h1>
+            <h1 className="text-xl font-bold text-gray-500 py-5">{t('recentPosts')}</h1>
             <div className="flex flex-wrap justify-start min-h-screen bg-gray-100 pl-5 gap-5">
                 {posts.map((post) => (
                     <div key={post.id} className="flex-basis-1/2 max-w-[calc(50%-1rem)]">

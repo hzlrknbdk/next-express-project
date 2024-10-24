@@ -1,16 +1,18 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { HomeIcon, UsersIcon, CalendarIcon, VideoCameraIcon, PhotoIcon, FolderIcon } from '@heroicons/react/24/outline';
 
 const Sidebar = () => {
-    const menuItems = [
-        { name: 'Feed', icon: <HomeIcon className="w-6 h-6 mr-2 text-gray-500" /> },
-        { name: 'Friends', icon: <UsersIcon className="w-6 h-6 mr-2 text-gray-500" /> },
-        { name: 'Events', icon: <CalendarIcon className="w-6 h-6 mr-2 text-gray-500" /> },
-        { name: 'Watch Videos', icon: <VideoCameraIcon className="w-6 h-6 mr-2 text-gray-500" /> },
-        { name: 'Photos', icon: <PhotoIcon className="w-6 h-6 mr-2 text-gray-500" /> },
-        { name: 'Files', icon: <FolderIcon className="w-6 h-6 mr-2 text-gray-500" /> },
-    ];
+    const t = useTranslations('sidebar');
 
+    const menuItems = [
+        { name: t('feed'), icon: <HomeIcon className="w-6 h-6 mr-2 text-gray-500" /> },
+        { name: t('friends'), icon: <UsersIcon className="w-6 h-6 mr-2 text-gray-500" /> },
+        { name: t('events'), icon: <CalendarIcon className="w-6 h-6 mr-2 text-gray-500" /> },
+        { name: t('videos'), icon: <VideoCameraIcon className="w-6 h-6 mr-2 text-gray-500" /> },
+        { name: t('photos'), icon: <PhotoIcon className="w-6 h-6 mr-2 text-gray-500" /> },
+        { name: t('files'), icon: <FolderIcon className="w-6 h-6 mr-2 text-gray-500" /> },
+    ];
     return (
         <div className="flex">
             <div className="w-64 h-screen bg-white text-gray-500 overflow-y-auto">
