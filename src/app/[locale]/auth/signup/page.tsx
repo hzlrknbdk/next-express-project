@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import UserService from '@/pages/api/services/user';
-import Loading from '@/app/[locale]/components/core/Loading';
-import InputField from '@/app/[locale]/components/common/InputField';
-import { useTranslations, useLocale } from 'next-intl';
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import UserService from "@/pages/api/services/user";
+import Loading from "@/app/[locale]/components/core/Loading";
+import InputField from "@/app/[locale]/components/common/InputField";
+import { useLocale } from "next-intl";
 
 const schema = yup.object().shape({
-    username: yup.string().required('Kullanıcı adı gereklidir'),
-    email: yup.string().email('Geçersiz e-posta').required('E-posta gereklidir'),
-    password: yup.string().required('Şifre gereklidir'),
-    passwordAgain: yup.string()
-        .oneOf([yup.ref('password')], 'Şifreler eşleşmiyor')
-        .required('Şifre tekrar gereklidir')
-
+    username: yup.string().required("Kullanıcı adı gereklidir"),
+    email: yup.string().email("Geçersiz e-posta").required("E-posta gereklidir"),
+    password: yup.string().required("Şifre gereklidir"),
+    passwordAgain: yup
+        .string()
+        .oneOf([yup.ref("password")], "Şifreler eşleşmiyor")
+        .required("Şifre tekrar gereklidir"),
 });
 
 export default function SignUp() {
@@ -31,7 +31,11 @@ export default function SignUp() {
         resolver: yupResolver(schema),
     });
 
-    const onSubmit = async (data: { username: string; email: string; password: string }) => {
+    const onSubmit = async (data: {
+        username: string;
+        email: string;
+        password: string;
+    }) => {
         setLoading(true);
         setError(null);
 
@@ -42,7 +46,9 @@ export default function SignUp() {
                 await router.push(`/${locale}/auth/login`);
             }
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Bilinmeyen bir hata oluştu');
+            setError(
+                err instanceof Error ? err.message : "Bilinmeyen bir hata oluştu"
+            );
         } finally {
             setLoading(false);
         }
@@ -58,11 +64,8 @@ export default function SignUp() {
                 <h1 className="text-2xl font-bold text-center">Kayıt Ol</h1>
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
                     <div className="rounded-md shadow-sm space-y-4">
-
                         {error && (
-                            <div className="text-red-500 text-sm text-center">
-                                {error}
-                            </div>
+                            <div className="text-red-500 text-sm text-center">{error}</div>
                         )}
 
                         <InputField
@@ -70,6 +73,7 @@ export default function SignUp() {
                             control={control}
                             label="Kullanıcı Adı"
                             placeholder="Kullanıcı Adı"
+                            widthSize="w-full"
                             required
                         />
                         <InputField
@@ -78,6 +82,7 @@ export default function SignUp() {
                             label="E-posta"
                             type="email"
                             placeholder="E-posta"
+                            widthSize="w-full"
                             required
                         />
                         <InputField
@@ -86,6 +91,7 @@ export default function SignUp() {
                             label="Şifre"
                             type="password"
                             placeholder="Şifre"
+                            widthSize="w-full"
                             required
                         />
                         <InputField
@@ -94,6 +100,7 @@ export default function SignUp() {
                             label="Şifre Tekrar"
                             type="password"
                             placeholder="Şifre Tekrar"
+                            widthSize="w-full"
                             required
                         />
                     </div>
@@ -110,9 +117,11 @@ export default function SignUp() {
 
                 <div className="text-center">
                     <p className="text-sm">
-                        Zaten bir hesabınız var mı?{' '}
+                        Zaten bir hesabınız var mı?{" "}
                         <Link href={`/${locale}/auth/login`}>
-                            <span className="font-medium text-indigo-600 hover:text-indigo-500">Giriş Yap</span>
+                            <span className="font-medium text-indigo-600 hover:text-indigo-500">
+                                Giriş Yap
+                            </span>
                         </Link>
                     </p>
                 </div>

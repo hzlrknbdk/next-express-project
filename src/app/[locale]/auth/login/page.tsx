@@ -1,30 +1,33 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import LoginService from '@/pages/api/services/auth';
-import InputField from '@/app/[locale]/components/common/InputField';
-import { useState } from 'react';
-import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
+"use client";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import LoginService from "@/pages/api/services/auth";
+import InputField from "@/app/[locale]/components/common/InputField";
+import { useState } from "react";
+import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 const schema = yup.object().shape({
-    email: yup.string().email('Geçersiz e-posta').required('E-posta gereklidir'),
-    password: yup.string().required('Şifre gereklidir')
+    email: yup.string().email("Geçersiz e-posta").required("E-posta gereklidir"),
+    password: yup.string().required("Şifre gereklidir"),
 });
 
 export default function Login() {
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
-    const t = useTranslations('auth');
+    const t = useTranslations("auth");
 
-    console.log({ t: t("emailLabel") })
     const locale = useLocale();
     const router = useRouter();
 
-    const { control, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
+    const {
+        control,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
     });
 
     const onSubmit = async (data: { email: string; password: string }) => {
@@ -35,12 +38,15 @@ export default function Login() {
             const { data: response } = await LoginService.login(data);
             if (response?.token) {
                 document.cookie = `token=${response.token}; path=/`;
+                localStorage.setItem("accessToken", response.token);
                 router.push(`/${locale}/feeds`);
             } else {
-                throw new Error('Giriş başarısız, token alınamadı.');
+                throw new Error("Giriş başarısız, token alınamadı.");
             }
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Bilinmeyen bir hata oluştu');
+            setError(
+                err instanceof Error ? err.message : "Bilinmeyen bir hata oluştu"
+            );
         } finally {
             setLoading(false);
         }
@@ -50,11 +56,7 @@ export default function Login() {
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="w-full max-w-lg p-10 space-y-6 bg-white shadow-md rounded-lg">
                 <h1 className="text-2xl font-bold text-center">{t("loginTitle")}</h1>
-                {error && (
-                    <div className="mb-4 text-red-500 text-center">
-                        {error}
-                    </div>
-                )}
+                {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
                     <div className="rounded-md shadow-sm space-y-4">
                         <InputField
@@ -65,6 +67,7 @@ export default function Login() {
                             placeholder={t("emailPlaceholder")}
                             required
                             error={errors.email?.message}
+                            widthSize="w-full"
                         />
                         <InputField
                             name="password"
@@ -74,12 +77,16 @@ export default function Login() {
                             placeholder={t("passwordPlaceholder")}
                             required
                             error={errors.password?.message}
+                            widthSize="w-full"
                         />
                     </div>
 
                     <div className="flex items-center justify-between">
                         <div className="text-sm">
-                            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                            <a
+                                href="#"
+                                className="font-medium text-indigo-600 hover:text-indigo-500"
+                            >
                                 {t("forgotPassword")}
                             </a>
                         </div>
@@ -98,7 +105,9 @@ export default function Login() {
                             <p className="text-sm pt-5">
                                 {t("signupPrompt")}{" "}
                                 <Link href={`/${locale}/auth/signup`}>
-                                    <span className="font-medium text-indigo-600 hover:text-indigo-500">{t("signupLink")}</span>
+                                    <span className="font-medium text-indigo-600 hover:text-indigo-500">
+                                        {t("signupLink")}
+                                    </span>
                                 </Link>
                             </p>
                         </div>

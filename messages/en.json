@@ -60,5 +60,48 @@
   },
   "stories": {
     "title": "Stories"
+  },
+  "events": {
+    "submitEvent": "Event Submit",
+    "eventInfo": {
+      "eventName": "Event name",
+      "eventType": "Event type",
+      "seminarDuration": "Seminar Duration",
+      "dateTime": {
+        "startDate": "Event start date",
+        "endDate": "Event end date"
+      },
+      "city": "City where the event will be held",
+      "address": "Full address of the event location",
+      "description": "General introduction or descriptive text of the event",
+      "organizerInfo": {
+        "name": "Name of the organizing organization",
+        "email": "Contact email address",
+        "phone": "Contact phone number"
+      }
+    },
+    "participantInfo": {
+      "maxParticipants": "Maximum number of participants or capacity",
+      "participationFee": {
+        "isPaid": "Is paid",
+        "feeAmount": "Amount of the fee if the event is paid",
+        "paymentDetails": "Payment information for paid events"
+      }
+    },
+    "eventDetails": {
+      "sessions": {
+        "sessionTitle": "Session Title",
+        "sessionDescription": "Session Description",
+        "sessionStartTime": "Session Start Time",
+        "sessionEndTime": "Session End Time"
+      },
+      "speakers": {
+        "speakerName": "Speaker Name",
+        "speakerBio": "Speaker Bio"
+      }
+    },
+    "remove": "Remove",
+    "addSession": "+ Add Session",
+    "addSpeaker": "+ Add Speaker"
   }
 }

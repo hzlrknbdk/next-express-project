@@ -60,5 +60,48 @@
   },
   "stories": {
     "title": "Hikayeler"
+  },
+  "events": {
+    "submitEvent": "Etkinliği Kaydet",
+    "eventInfo": {
+      "eventName": "Etkinliğin adı",
+      "eventType": "Etkinliğin türü",
+      "seminarDuration": "Seminerin Süresi",
+      "dateTime": {
+        "startDate": "Etkinlik başlangıç tarihi",
+        "endDate": "Etkinlik bitiş tarihi"
+      },
+      "city": "Etkinliğin yapılacağı şehir",
+      "address": "Etkinlik adresi",
+      "description": "Etkinliğin genel tanıtımı veya açıklayıcı bir metin",
+      "organizerInfo": {
+        "name": "Organizatörün adı",
+        "email": "İletişim e-posta adresi",
+        "phone": "İletişim telefon numarası"
+      }
+    },
+    "participantInfo": {
+      "maxParticipants": "Maksimum katılımcı sayısı veya kontenjan",
+      "participationFee": {
+        "isPaid": "Ücretli mi",
+        "feeAmount": "Etkinlik ücretli ise ücret miktarı",
+        "paymentDetails": "Ücretli etkinlikler için ödeme bilgileri"
+      }
+    },
+    "eventDetails": {
+      "sessions": {
+        "sessionTitle": "Oturum Başlığı",
+        "sessionDescription": "Oturum Açıklaması",
+        "sessionStartTime": "Oturum Başlangıç Saati",
+        "sessionEndTime": "Oturum Bitiş Saati"
+      },
+      "speakers": {
+        "speakerName": "Konuşmacı Adı",
+        "speakerBio": "Konuşmacı Biyografisi"
+      }
+    },
+    "remove": "Kaldır",
+    "addSession": "+ Yeni Oturum Ekle",
+    "addSpeaker": "+ Yeni Konuşmacı Ekle"
   }
 }

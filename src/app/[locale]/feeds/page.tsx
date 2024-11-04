@@ -17,7 +17,7 @@ export default function Feeds() {
         <>
             <Header onMenuSelect={handleMenuSelect} />
             <div className="flex h-screen">
-                <LeftSidebar />
+                <LeftSidebar onMenuSelect={handleMenuSelect} />
                 <MainContent activeMenu={activeMenu} />
                 <RightSidebar />
             </div>
