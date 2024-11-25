@@ -45,7 +45,8 @@
   "header": {
     "profile": "Profil",
     "settings": "Ayarlar",
-    "feeds": "Akış"
+    "feeds": "Akış",
+    "logout": "Çıkış"
   },
   "search": {
     "search": "Ara"
@@ -63,6 +64,7 @@
   },
   "events": {
     "submitEvent": "Etkinliği Kaydet",
+    "updateEvent": "Etkinliği Güncelle",
     "eventInfo": {
       "eventName": "Etkinliğin adı",
       "eventType": "Etkinliğin türü",

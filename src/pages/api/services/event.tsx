@@ -15,6 +15,15 @@ class Event {
     getEventById(id: number) {
         return axiosInstance.get<EventInterface>(`${this.subdomain}/${id}`);
     }
+
+    getEvents() {
+        return axiosInstance.get<EventInterface>(`${this.subdomain}`);
+    }
+
+    deleteEvent(id: number) {
+        return axiosInstance.delete(`${this.subdomain}/${id}`)
+    }
+
 }
 
 export default new Event();

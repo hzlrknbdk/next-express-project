@@ -15,6 +15,7 @@ export default function Header({ onMenuSelect }: HeaderProps) {
         { label: t('profile'), value: 'profile' },
         { label: t('settings'), value: 'settings' },
         { label: t('feeds'), value: 'feeds' },
+        { label: t('logout'), value: 'logout' },
     ];
 
     return (

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import "react-datepicker/dist/react-datepicker.css";
 import InputField from "@/app/[locale]/components/common/InputField";
 import DatePickerField from "@/app/[locale]/components/common/DatePickerField";
-import CustomRadioGroup from "@/app/[locale]/components/common/CustomRadioGroup";
+import RadioGroup from "@/app/[locale]/components/common/RadioGroup";
 import TextArea from "@/app/[locale]/components/common/TextArea";
 import File from "@/app/[locale]/components/common/File";
 import ProfileService from "@/pages/api/services/profile";
@@ -169,7 +169,7 @@ export default function ProfileForm() {
                 placeholderText={t("birthDatePlaceholder")}
                 error={errors.birthDate?.message}
             />
-            <CustomRadioGroup
+            <RadioGroup
                 name="gender"
                 label={t("genderLabel")}
                 control={control}

@@ -19,7 +19,7 @@ export default function LocaleSwitcher() {
             <select
                 value={currentLocale}
                 onChange={handleChange}
-                className="border border-gray-300 rounded-md p-2 text-gray-500 hover:text-blue-700 transition-colors"
+                className="border border-gray-300 rounded-md p-2 text-xs text-gray-500 hover:text-blue-700 transition-colors"
             >
                 <option value="tr">TR</option>
                 <option value="en">EN</option>

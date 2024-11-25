@@ -45,7 +45,8 @@
   "header": {
     "profile": "Profile",
     "settings": "Settings",
-    "feeds": "Feeds"
+    "feeds": "Feeds",
+    "logout": "Log out"
   },
   "search": {
     "search": "Search"
@@ -63,6 +64,7 @@
   },
   "events": {
     "submitEvent": "Event Submit",
+    "updateEvent": "Update Event",
     "eventInfo": {
       "eventName": "Event name",
       "eventType": "Event type",

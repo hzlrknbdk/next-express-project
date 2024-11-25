@@ -20,7 +20,7 @@ export default function RightSidebar() {
     const t = useTranslations('friendsSidebar');
 
     return (
-        <aside className="w-64 rounded-sm bg-white text-gray-500 p-4 mt-2">
+        <aside className="w-60 rounded-sm bg-white text-gray-500 p-4 mt-2">
             <Search />
             <div className="mt-5 font-semibold">{t('friends')} </div>
             <ul className="mt-3 space-y-3">

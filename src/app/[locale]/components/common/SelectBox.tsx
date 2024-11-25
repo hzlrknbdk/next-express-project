@@ -10,15 +10,17 @@ interface Option {
 interface SelectFieldProps {
     name: string;
     control?: any;
-    label: string;
+    label?: string;
     options: Option[];
     placeholder?: string;
     error?: string;
     required?: boolean;
+    showLabel?: boolean;
+    classNames?: string
     onChange?: (value: string | number) => void;
 }
 
-const classNames =
+const defaultClassNames =
     "appearance-none w-80 rounded-md grid grid-cols-2 gap-6 px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm";
 
 const SelectBox: React.FC<SelectFieldProps> = ({
@@ -30,6 +32,7 @@ const SelectBox: React.FC<SelectFieldProps> = ({
     required,
     onChange,
     placeholder,
+    classNames = defaultClassNames
 }) => {
     return (
         <FormField name={name} label={label} error={error} required={required}>
@@ -42,6 +45,7 @@ const SelectBox: React.FC<SelectFieldProps> = ({
                             {...field}
                             id={name}
                             className={classNames}
+                            role="combobox"
                             onChange={(event) => {
                                 field.onChange(event.target.value);
                                 if (onChange) {
@@ -62,6 +66,7 @@ const SelectBox: React.FC<SelectFieldProps> = ({
                 <select
                     id={name}
                     className={classNames}
+                    role="combobox"
                     onChange={(event) => {
                         if (onChange) {
                             onChange(event.target.value);
